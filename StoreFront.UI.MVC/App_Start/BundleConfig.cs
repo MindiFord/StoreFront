@@ -22,9 +22,30 @@ namespace StoreFront.UI.MVC
                       "~/Scripts/bootstrap.js",
                       "~/Scripts/respond.js"));
 
+            //bundles.Add(new StyleBundle("~/Content/css").Include(
+            //          "~/Content/bootstrap.css",
+            //          "~/Content/site.css"));
+
             bundles.Add(new StyleBundle("~/Content/css").Include(
-                      "~/Content/bootstrap.css",
-                      "~/Content/site.css"));
+                      "~/Content/css/bootstrap.min.css",
+                      "~/Content/css/font-awesome.min.css",
+                      "~/Content/css/elegant-icons.css",
+                      "~/Content/css/nice-select.css",
+                      "~/Content/css/jquery-ui.min.css",
+                      "~/Content/css/owl.carousel.min.css",
+                      "~/Content/css/slicknav.min.css",
+                      "~/Content/css/style.css"));
+
+            bundles.Add(new ScriptBundle("~/bundles/js").Include(
+                      "~/Scripts/jquery-3.3.1.min.js",
+                      "~/Scripts/bootstrap.min.js",
+                      "~/Scripts/jquery.nice-select.min.js",
+                      "~/Scripts/jquery-ui.min.js",
+                      "~/Scripts/jquery.slicknav.js",
+                      "~/Scripts/mixitup.min.js",
+                      "~/Scripts/owl.carousel.min.js",
+                      "~/Scripts/main.js"));
+
         }
     }
 }
