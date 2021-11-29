@@ -1,0 +1,37 @@
+﻿@model IEnumerable<StoreFront.DATA.EF.Status>
+
+@{
+    ViewBag.Title = "Status";
+}
+
+@Html.Partial("_BreadcrumbPartial")
+
+
+<div class="row">
+    <div class="col-lg-4"></div>
+    <div class="col-lg-4">
+
+
+        <p>
+            @Html.ActionLink("Create New", "Create", null, new { @class = "btn site-btn" })
+        </p>
+        <table class="table">
+
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Description)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", new { id = item.StatusID }, new { @class = "btn site-btn" }) 
+                        @Html.ActionLink("Details", "Details", new { id = item.StatusID }, new { @class = "btn site-btn" }) 
+                        @Html.ActionLink("Delete", "Delete", new { id = item.StatusID }, new { @class = "btn site-btn" })
+                    </td>
+                </tr>
+            }
+
+        </table>
+    </div>
+</div>

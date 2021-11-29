@@ -12,13 +12,17 @@
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;600;900&display=swap" rel="stylesheet">
     <!-- Css Styles -->
     @*<link rel="stylesheet" href="~/Content/css/bootstrap.min.css" type="text/css">
-    <link rel="stylesheet" href="~/Content/css/font-awesome.min.css" type="text/css">
-    <link rel="stylesheet" href="~/Content/css/elegant-icons.css" type="text/css">
-    <link rel="stylesheet" href="~/Content/css/nice-select.css" type="text/css">
-    <link rel="stylesheet" href="~/Content/css/jquery-ui.min.css" type="text/css">
-    <link rel="stylesheet" href="~/Content/css/owl.carousel.min.css" type="text/css">
-    <link rel="stylesheet" href="~/Content/css/slicknav.min.css" type="text/css">
-    <link rel="stylesheet" href="~/Content/css/style.css" type="text/css">*@
+        <link rel="stylesheet" href="~/Content/css/font-awesome.min.css" type="text/css">
+        <link rel="stylesheet" href="~/Content/css/elegant-icons.css" type="text/css">
+        <link rel="stylesheet" href="~/Content/css/nice-select.css" type="text/css">
+        <link rel="stylesheet" href="~/Content/css/jquery-ui.min.css" type="text/css">
+        <link rel="stylesheet" href="~/Content/css/owl.carousel.min.css" type="text/css">
+        <link rel="stylesheet" href="~/Content/css/slicknav.min.css" type="text/css">
+        <link rel="stylesheet" href="~/Content/css/style.css" type="text/css">*@
+
+    <link rel="stylesheet" href="//cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css" />
+    @* Added for datatables.*@
+
 
     @Styles.Render("~/Content/css")
 
@@ -128,19 +132,30 @@
                         <ul>
                             <li class="active"><a href="@Url.Action("Index", "Home")">Home</a></li>
                             <li><a href="./shop-grid.html">Shop</a></li>
-                            <li>
-                                <a href="#">Pages</a>
-                                <ul class="header__menu__dropdown">
-                                    <li><a href="./shop-details.html">Shop Details</a></li>
-                                    <li><a href="./shoping-cart.html">Shoping Cart</a></li>
-                                    <li><a href="./checkout.html">Check Out</a></li>
-                                    <li><a href="./blog-details.html">Blog Details</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="./blog.html">Blog</a></li>
+                            @*<li>
+            <a href="#">Pages</a>
+            <ul class="header__menu__dropdown">
+                <li><a href="./shop-details.html">Shop Details</a></li>
+                <li><a href="./shoping-cart.html">Shoping Cart</a></li>
+                <li><a href="./checkout.html">Check Out</a></li>
+                <li><a href="./blog-details.html">Blog Details</a></li>
+            </ul>
+        </li>
+        <li><a href="./blog.html">Blog</a></li>*@
                             <li><a href="@Url.Action("Contact", "Home")">Contact</a></li>
-
-
+                            @if (User.IsInRole("Admin"))
+                            {
+                                <li><a href="#">Admin</a>
+                                    <ul class="header__menu__dropdown">
+                                        <li><a href="@Url.Action("Index", "Categories")" />Categories</li>
+                                        <li><a href="@Url.Action("Index", "Departments")" />Departments</li>
+                                        <li><a href="@Url.Action("Index", "Employees")" />Employees</li>
+                                        <li><a href="@Url.Action("Index", "PricePers")" />Price Per</li>
+                                        <li><a href="@Url.Action("Index", "Products")" />Products</li>
+                                        <li><a href="@Url.Action("Index", "Status")" />Status</li>
+                                    </ul>
+                                </li>
+                            }
                         </ul>
                     </nav>
                 </div>
@@ -234,16 +249,18 @@
     </footer>
     <!-- Footer Section End -->
     <!-- Js Plugins -->
-    <script src="~/Scripts/jquery-3.3.1.min.js"></script>
-    <script src="~/Scripts/bootstrap.min.js"></script>
-    <script src="~/Scripts/jquery.nice-select.min.js"></script>
-    <script src="~/Scripts/jquery-ui.min.js"></script>
-    <script src="~/Scripts/jquery.slicknav.js"></script>
-    <script src="~/Scripts/mixitup.min.js"></script>
-    <script src="~/Scripts/owl.carousel.min.js"></script>
-    <script src="~/Scripts/main.js"></script>
+    @*<script src="~/Scripts/jquery-3.3.1.min.js"></script>
+        <script src="~/Scripts/bootstrap.min.js"></script>
+        <script src="~/Scripts/jquery.nice-select.min.js"></script>
+        <script src="~/Scripts/jquery-ui.min.js"></script>
+        <script src="~/Scripts/jquery.slicknav.js"></script>
+        <script src="~/Scripts/mixitup.min.js"></script>
+        <script src="~/Scripts/owl.carousel.min.js"></script>
+        <script src="~/Scripts/main.js"></script>*@
+
 
     @Scripts.Render("~/bundles/js")
+    <script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
     @RenderSection("scripts", required: false)
 </body>
 </html>

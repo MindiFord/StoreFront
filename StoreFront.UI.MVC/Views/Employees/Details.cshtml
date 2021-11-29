@@ -1,0 +1,94 @@
+﻿@model StoreFront.DATA.EF.Employee
+
+@{
+    ViewBag.Title = "Employee Details";
+}
+
+@Html.Partial("_BreadcrumbPartial")
+
+<div class="row">
+    <div class="col-md-4"></div>
+    <div class="col-md-3">
+        <dl class="dl-horizontal">
+
+            <dt>
+                @Html.DisplayNameFor(model => model.FullName)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.FullName)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Phone)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Phone)
+            </dd>
+
+
+        </dl>
+
+        <br /><br />
+
+        <p class="bottom">
+            @Html.ActionLink("Edit", "Edit", new { id = Model.EmployeeID }, new { @class = "btn site-btn" }) 
+            @Html.ActionLink("Back to Employees", "Index", null, new { @class = "btn site-btn" })
+        </p>
+    </div>
+    <div class="col-md-5">
+
+
+
+        <dl class="dl-horizontal">
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Address)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Address)
+            </dd>
+            <dt></dt>
+            <dd>
+                @Html.DisplayFor(model => model.CityStateZip)
+            </dd>
+
+            @*<dt>
+                @Html.DisplayNameFor(model => model.Address)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Address)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.City)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.City)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.State)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.State)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Zip)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Zip)
+            </dd>*@
+
+
+        </dl>
+
+    </div>
+</div>

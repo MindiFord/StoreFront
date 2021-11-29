@@ -1,0 +1,33 @@
+﻿@model StoreFront.DATA.EF.PricePer
+
+@{
+    ViewBag.Title = "Price Option Details";
+}
+
+@Html.Partial("_BreadcrumbPartial")
+
+<div class="row">
+    <div class="col-lg-4"></div>
+    <div class="col-lg-4">
+
+
+
+        <div>
+
+            <dl class="dl-horizontal">
+                <dt>
+                    @Html.DisplayNameFor(model => model.Description)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Description)
+                </dd>
+
+            </dl>
+        </div>
+        <p>
+            @Html.ActionLink("Edit", "Edit", new { id = Model.PriceID }, new { @class = "btn site-btn" })
+            @Html.ActionLink("Back to List", "Index", null, new { @class = "btn site-btn" })
+        </p>
+    </div>
+</div>

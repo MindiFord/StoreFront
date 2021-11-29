@@ -1,0 +1,40 @@
+﻿@model IEnumerable<StoreFront.DATA.EF.PricePer>
+
+@{
+    ViewBag.Title = "Price Options";
+}
+
+@Html.Partial("_BreadcrumbPartial")
+
+<div class="row">
+    <div class="col-lg-4"></div>
+    <div class="col-lg-4">
+        <p>
+            @Html.ActionLink("Add Price Option", "Create", null, new { @class = "btn site-btn" })
+        </p>
+        <table class="table">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Description)
+                </th>
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Description)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", new { id = item.PriceID }, new { @class = "btn site-btn" }) 
+                        @Html.ActionLink("Details", "Details", new { id = item.PriceID }, new { @class = "btn site-btn" }) 
+                        @Html.ActionLink("Delete", "Delete", new { id = item.PriceID }, new { @class = "btn site-btn" })
+                    </td>
+                </tr>
+
+            }
+
+        </table>
+    </div>
+</div>

@@ -1,0 +1,30 @@
+﻿@model StoreFront.DATA.EF.Department
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+@Html.Partial("_BreadcrumbPartial")
+
+<div class="row">
+    <div class="col-lg-1"></div>
+    <div class="col-lg-6">
+
+        <h3>Are you sure you want to delete @Model.Department1?</h3>
+        <br />
+
+
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-actions no-color">
+                <input type="submit" value="Delete" class="btn site-btn" /> 
+                @Html.ActionLink("Back to List", "Index", null, new { @class = "btn site-btn" })
+            </div>
+            <br />
+        }
+
+
+    </div>
+</div>

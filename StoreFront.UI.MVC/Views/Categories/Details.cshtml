@@ -1,0 +1,31 @@
+﻿@model StoreFront.DATA.EF.Category
+
+@{
+    ViewBag.Title = "Category Details - " + Model.CategoryName;
+}
+
+@Html.Partial("_BreadcrumbPartial")
+
+<div class="row">
+    <div class="col-md-1"></div>
+    <div class="col-md-4">
+        <div>
+
+            <dl class="dl-horizontal">
+                <dt>
+                    @Html.DisplayNameFor(model => model.CategoryName)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.CategoryName)
+                </dd>
+
+            </dl>
+        </div>
+        <p>
+            @Html.ActionLink("Edit", "Edit", new { id = Model.CategoryID }, new { @class="btn site-btn" }) 
+            @Html.ActionLink("Back to Categories", "Index", null, new { @class="btn site-btn" } )
+        </p>
+    </div>
+</div>
+

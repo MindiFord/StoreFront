@@ -112,6 +112,9 @@ namespace StoreFront.DATA.EF/*.StoreFrontMetadata*/ // ** a
         // Custom, read only property for FullName
         [Display(Name = "Employee")]
         public string FullName => FName + ' ' + LName;
+
+        
+        public string CityStateZip => City + ", " + State + " " + Zip;
         
     }
 
