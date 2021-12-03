@@ -32,6 +32,9 @@
                     <th>
                         @Html.DisplayNameFor(model => model.Status.Description)
                     </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Image)
+                    </th>
                     <th></th>
                 </tr>
             </thead>
@@ -53,6 +56,9 @@
 
                         <td>
                             @Html.DisplayFor(modelItem => item.Status.Description)
+                        </td>
+                        <td>
+                            <img src="~/Content/img/product/@item.Image" alt="Image of @item.ProductName" title="@item.ProductName" />
                         </td>
                         <td class="text-center">
                             @Html.ActionLink("Edit", "Edit", new { id = item.ProductID }, new { @class = "btn site-btn" })

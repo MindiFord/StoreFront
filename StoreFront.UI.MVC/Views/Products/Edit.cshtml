@@ -6,7 +6,7 @@
 
 @Html.Partial("_BreadcrumbPartial")
 
-@using (Html.BeginForm())
+@using (Html.BeginForm("Edit", "Products", FormMethod.Post, new { enctype="multipart/form-data" }))
 {
     @Html.AntiForgeryToken()
 
@@ -63,14 +63,17 @@
                 <div class="form-group">
 
                     <div class="col-md-10">
-                        @Html.EditorFor(model => model.Image, new { htmlAttributes = new { @class = "form-control", @placeholder = "Image" } })
-                        @Html.ValidationMessageFor(model => model.Image, "", new { @class = "text-danger" })
+                        @*@Html.EditorFor(model => model.Image, new { htmlAttributes = new { @class = "form-control", @placeholder = "Image" } })
+                        @Html.ValidationMessageFor(model => model.Image, "", new { @class = "text-danger" })*@
+                        Existing Image: <img width="150" src="@Url.Content("~/Content/img/product/" + Model.Image)" />
+                        <br /><br />
+                        Change Image: <input type="file" styel="display:inline" name="logo" />
                     </div>
                 </div>
 
                 <div class="form-group">
                     <div class="col-md-offset-2 col-md-10">
-                        <input type="submit" value="Create" class="btn site-btn" />
+                        <input type="submit" value="Update" class="btn site-btn" />
                         @Html.ActionLink("Back to List", "Index", null, new { @class = "btn site-btn" })
                     </div>
                 </div>

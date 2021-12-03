@@ -22,7 +22,7 @@
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Image)
+            <img src="~/Content/img/product/@Model.Image" alt="@Model.ProductName" />
         </dd>
 
         <dt>
@@ -63,6 +63,20 @@
 
         <dd>
             @Html.DisplayFor(model => model.Status.Description)
+        </dd>
+
+        <dt>
+            <label>Quantity: </label>
+        </dt>
+        <dd>
+            @using (Html.BeginForm("AddToCart", "Products", new { productID = Model.ProductID }, FormMethod.Post))
+            {
+                // Use a hiddenFor() to pass the ProductID
+                @Html.HiddenFor(x => x.ProductID)
+
+                @Html.TextBox("Qty", 1, new { @class = "form-control", @style = "max-width:75px; display:inline;" })
+                <input type="submit" value="Add to Cart" class="btn site-btn" name="qty" />
+            }
         </dd>
 
     </dl>
